@@ -1,8 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-fluid">
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+<h1 style="text-align: center;">MPASHO SASA</h1>
+<div class="container breaking">
+    <img src="/static/images/news.jpg" alt="breaking" class="image">
+    <div class="paragraph">
+        <h3>WELCOME TO MPASHO SASA</h3>
+        <P>We've got you from local to international news </P>
+    </div>
+</div>
+<div class="container-fluid general" style="scroll-behavior: smooth; background-color: whitesmoke;">
     <div class="row">
-            <h2 style="text-align: center;color:#056b5b;">General news </h2><hr>
+            <h2 style="text-align: center;color:#d8e61b;">General news </h2><hr>
             {% for all_news in general %}
             <div class="col-md-2">
                     <div class="thumbnail">
@@ -17,7 +29,7 @@
     </div>
 </div>
 <hr>
-<div class="container-fluid">
+<div class="container-fluid business" style="background-color: aliceblue;">
     <div class="row">
                     <h2 style="text-align: center;color:#056b5b;">Business news </h2><hr>
                     {% for all_news in business %}
@@ -36,7 +48,7 @@
     </div>
 </div>
 <hr>
-<div class="container-fluid">
+<div class="container-fluid sports" style="background-color: whitesmoke;">
     <div class="row">
              <h2 style="text-align: center;color:#056b5b;">Sports news </h2><hr>
              {% for all_news in sports %}
@@ -53,7 +65,7 @@
    </div>
 </div>
 <hr>
-<div class="container-fluid">
+<div class="container-fluid tech" style="background-color: aliceblue;">
     <div class="row">
             <h2 style="text-align: center;color:#056b5b;">Tech news </h2><hr>
             {% for all_news in technology %}
@@ -70,6 +82,7 @@
     </div>
 </div>
 <hr>
+<div class="container fluid" style="background-color: whitesmoke;">
 <h2 style="text-align: center;color:#056b5b;">Science news </h2>
                                         <hr>
                                 {% for all_news in science %}
@@ -85,5 +98,6 @@
                                  {% endfor %}
                                 </div>
                                 </div>
+                            </div>
                                 <hr>
 {% endblock %}        
